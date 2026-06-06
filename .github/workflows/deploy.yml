@@ -3,6 +3,12 @@ name: Deploy to S3 + CloudFront
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - '**.md'
+      - 'specs/**'
+      - '.claude/**'
+      - '.idea/**'
+      - '.gitignore'
   workflow_dispatch:
 
 permissions:
