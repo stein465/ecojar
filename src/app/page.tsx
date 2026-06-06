@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main data-deploy-test="2026-06-06T16:15Z">
         <Hero />
       </main>
     </>
