@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(run)",
+      "Bash(npm run *)",
+      "Bash(gh auth *)",
+      "Bash(Get-Content *)",
+      "PowerShell([System.IO.File]::ReadAllText\\(\"C:\\\\workspace\\\\ecojar\\\\specs\\\\deploy.md\"\\))",
+      "Bash(git -C C:\\\\workspace\\\\ecojar status)"
+    ]
+  }
+}
