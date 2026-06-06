@@ -1,4 +1,7 @@
 {
+  "env": {
+    "PATH": "C:\\Program Files\\GitHub CLI;C:\\Program Files\\nodejs;${PATH}"
+  },
   "permissions": {
     "allow": [
       "Skill(run)",
@@ -6,7 +9,37 @@
       "Bash(gh auth *)",
       "Bash(Get-Content *)",
       "PowerShell([System.IO.File]::ReadAllText\\(\"C:\\\\workspace\\\\ecojar\\\\specs\\\\deploy.md\"\\))",
-      "Bash(git -C C:\\\\workspace\\\\ecojar status)"
+      "Bash(git -C C:\\\\workspace\\\\ecojar status)",
+      "PowerShell(gh auth *)",
+      "PowerShell(wsl --version)",
+      "PowerShell(wsl --install)",
+      "Skill(update-config)",
+      "PowerShell(gh *)",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth status)",
+      "Read(//c/Program Files/GitHub CLI//**)",
+      "Read(//mnt/c/Program Files/**)",
+      "Bash(/c/Program Files/GitHub CLI/gh.exe *)",
+      "Bash(gh *)",
+      "Read(//c/Users/igorx/AppData/Roaming/**)",
+      "Read(//c/Users/igorx/AppData/Local/GitHub CLI//**)",
+      "Read(//c/Users/igorx/**)",
+      "Bash(cmdkey /list)",
+      "Bash(git config *)",
+      "Bash(/c/Windows/System32/cmdkey.exe /list)",
+      "Bash(git push *)",
+      "Bash(start *)",
+      "Bash(rm *)",
+      "PowerShell(npm run *)",
+      "PowerShell(& \"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\" run build)",
+      "PowerShell(npx --yes serve out -l 4173)",
+      "PowerShell($r = Invoke-WebRequest -UseBasicParsing http://localhost:4173/; Write-Host \"Status: $\\($r.StatusCode\\)\"; Write-Host \"Length: $\\($r.Content.Length\\) bytes\"; Write-Host \"---\"; $r.Content.Substring\\(0, [Math]::Min\\(800, $r.Content.Length\\)\\))",
+      "PowerShell($css = Invoke-WebRequest -UseBasicParsing http://localhost:4173/_next/static/chunks/30liosyvldvkz.css; \"CSS: $\\($css.StatusCode\\) | $\\($css.Content.Length\\) bytes\")",
+      "PowerShell($font = Invoke-WebRequest -UseBasicParsing http://localhost:4173/_next/static/media/357f91c9a3f29ddc-s.p.1qvuv_86zl6r8.woff2; \"Font: $\\($font.StatusCode\\) | $\\($font.RawContentLength\\) bytes\")",
+      "PowerShell($r = Invoke-WebRequest -UseBasicParsing -SkipHttpErrorCheck http://localhost:4173/this-route-does-not-exist; \"404 route: $\\($r.StatusCode\\)\")",
+      "PowerShell(try { $r = Invoke-WebRequest -UseBasicParsing http://localhost:4173/this-route-does-not-exist; \"404 route: $\\($r.StatusCode\\)\" } catch { \"404 route: $\\($_.Exception.Response.StatusCode.value__\\)\" })",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
