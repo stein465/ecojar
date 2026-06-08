@@ -1,6 +1,6 @@
 {
   "env": {
-    "PATH": "C:\\Program Files\\GitHub CLI;C:\\Program Files\\nodejs;${PATH}"
+    "PATH": "C:\\Program Files\\GitHub CLI;C:\\Program Files\\nodejs;C:\\Program Files\\Amazon\\AWSCLIV2;${PATH}"
   },
   "permissions": {
     "allow": [
@@ -39,7 +39,24 @@
       "PowerShell($r = Invoke-WebRequest -UseBasicParsing -SkipHttpErrorCheck http://localhost:4173/this-route-does-not-exist; \"404 route: $\\($r.StatusCode\\)\")",
       "PowerShell(try { $r = Invoke-WebRequest -UseBasicParsing http://localhost:4173/this-route-does-not-exist; \"404 route: $\\($r.StatusCode\\)\" } catch { \"404 route: $\\($_.Exception.Response.StatusCode.value__\\)\" })",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(aws --version)",
+      "Bash(aws sts *)",
+      "Bash(aws configure *)",
+      "PowerShell($env:Path = \"C:\\\\Program Files\\\\Amazon\\\\AWSCLIV2;$env:Path\"; aws --version; \"---\"; aws sts get-caller-identity 2>&1; \"---\"; aws configure list 2>&1)",
+      "PowerShell(aws s3 sync *)",
+      "PowerShell(aws s3 ls *)",
+      "PowerShell(aws s3api *)",
+      "PowerShell(Set-Content *)",
+      "PowerShell(aws cloudfront get-distribution *)",
+      "Bash(curl -is https://dikalbi5ighi5.cloudfront.net/this-does-not-exist)",
+      "PowerShell(gh secret *)",
+      "PowerShell(node --version)",
+      "Bash(curl -s \"https://dikalbi5ighi5.cloudfront.net/?cb=$\\(date +%s\\)\")",
+      "Bash(\"/c/Program Files/Amazon/AWSCLIV2/aws.exe\" cloudfront list-invalidations --distribution-id E172ZK6UD9WU33 --max-items 2 --query \"InvalidationList.Items[].[Id,Status,CreateTime]\" --output table)",
+      "Bash(git commit *)",
+      "Bash(git -C C:/workspace/ecojar status --short)",
+      "Bash(git -C C:/workspace/ecojar branch --show-current)"
     ]
   }
 }
