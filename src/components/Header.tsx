@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
 
 const NAV_LINKS = [
   { label: "Produtos", href: "#produtos" },
@@ -15,12 +16,12 @@ export default function Header() {
   const [active, setActive] = useState("");
 
   return (
-    <header className="bg-sand sticky top-0 z-50">
+    <header className="bg-noir sticky top-0 z-50">
       <div className="mx-auto max-w-7xl px-5 md:px-8 flex items-center justify-between h-16 gap-4">
         {/* Wordmark */}
         <a
           href="#"
-          className="font-display text-wine text-2xl leading-none rounded-sm focus-visible:outline-2 focus-visible:outline-clay focus-visible:outline-offset-2"
+          className="font-display text-ambar text-2xl leading-none rounded-sm focus-visible:outline-2 focus-visible:outline-ambar focus-visible:outline-offset-2"
         >
           ecojar
         </a>
@@ -36,10 +37,10 @@ export default function Header() {
               href={href}
               onClick={() => setActive(href)}
               className={[
-                "font-sans text-ink text-sm transition-colors hover:text-wine rounded-sm",
-                "focus-visible:outline-2 focus-visible:outline-clay focus-visible:outline-offset-2",
+                "font-body text-blush text-sm transition-colors hover:text-ambar rounded-sm",
+                "focus-visible:outline-2 focus-visible:outline-ambar focus-visible:outline-offset-2",
                 active === href
-                  ? "underline decoration-clay decoration-2 underline-offset-4"
+                  ? "underline decoration-ambar decoration-2 underline-offset-4"
                   : "",
               ].join(" ")}
             >
@@ -50,12 +51,9 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           {/* Desktop CTA */}
-          <a
-            href="https://wa.me/55SEUNUMERO"
-            className="hidden md:inline-flex bg-clay text-white font-sans text-sm font-medium px-5 py-2 rounded-full hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2"
-          >
-            Falar no WhatsApp
-          </a>
+          <div className="hidden md:block">
+            <WhatsAppCTA size="sm" />
+          </div>
 
           {/* Hamburger — mobile only */}
           <button
@@ -64,11 +62,11 @@ export default function Header() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen(true)}
-            className="md:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5 rounded focus-visible:outline-2 focus-visible:outline-clay focus-visible:outline-offset-2"
+            className="md:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5 rounded focus-visible:outline-2 focus-visible:outline-ambar focus-visible:outline-offset-2"
           >
-            <span className="block w-5 h-0.5 bg-ink" />
-            <span className="block w-5 h-0.5 bg-ink" />
-            <span className="block w-5 h-0.5 bg-ink" />
+            <span className="block w-5 h-0.5 bg-blush" />
+            <span className="block w-5 h-0.5 bg-blush" />
+            <span className="block w-5 h-0.5 bg-blush" />
           </button>
         </div>
       </div>
@@ -78,7 +76,7 @@ export default function Header() {
         aria-hidden="true"
         onClick={() => setOpen(false)}
         className={[
-          "fixed inset-0 z-40 bg-ink/40 transition-opacity duration-300 md:hidden",
+          "fixed inset-0 z-40 bg-noir/70 transition-opacity duration-300 md:hidden",
           open ? "opacity-100" : "opacity-0 pointer-events-none",
         ].join(" ")}
       />
@@ -91,20 +89,20 @@ export default function Header() {
         aria-label="Menu de navegação"
         aria-hidden={!open}
         className={[
-          "fixed top-0 right-0 z-50 h-full w-72 bg-sand flex flex-col p-7 shadow-2xl",
+          "fixed top-0 right-0 z-50 h-full w-72 bg-noir flex flex-col p-7 shadow-2xl",
           "transition-transform duration-300 md:hidden",
           open ? "translate-x-0" : "translate-x-full",
         ].join(" ")}
       >
         <div className="flex items-center justify-between mb-8">
-          <span className="font-display text-wine text-2xl leading-none">
+          <span className="font-display text-ambar text-2xl leading-none">
             ecojar
           </span>
           <button
             type="button"
             aria-label="Fechar menu"
             onClick={() => setOpen(false)}
-            className="w-10 h-10 flex items-center justify-center rounded text-ink hover:text-wine transition-colors focus-visible:outline-2 focus-visible:outline-clay focus-visible:outline-offset-2"
+            className="w-10 h-10 flex items-center justify-center rounded text-blush hover:text-ambar transition-colors focus-visible:outline-2 focus-visible:outline-ambar focus-visible:outline-offset-2"
           >
             <span aria-hidden="true" className="text-lg leading-none">✕</span>
           </button>
@@ -120,10 +118,10 @@ export default function Header() {
                 setOpen(false);
               }}
               className={[
-                "font-sans text-ink text-base rounded-sm hover:text-wine transition-colors",
-                "focus-visible:outline-2 focus-visible:outline-clay focus-visible:outline-offset-2",
+                "font-body text-blush text-base rounded-sm hover:text-ambar transition-colors",
+                "focus-visible:outline-2 focus-visible:outline-ambar focus-visible:outline-offset-2",
                 active === href
-                  ? "underline decoration-clay decoration-2 underline-offset-4"
+                  ? "underline decoration-ambar decoration-2 underline-offset-4"
                   : "",
               ].join(" ")}
             >
@@ -132,12 +130,9 @@ export default function Header() {
           ))}
         </nav>
 
-        <a
-          href="https://wa.me/55SEUNUMERO"
-          className="mt-auto inline-flex justify-center bg-clay text-white font-sans text-sm font-medium px-5 py-3.5 rounded-full hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2"
-        >
-          Falar no WhatsApp
-        </a>
+        <div className="mt-auto">
+          <WhatsAppCTA size="lg" className="w-full" />
+        </div>
       </div>
     </header>
   );

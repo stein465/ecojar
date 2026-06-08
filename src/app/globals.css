@@ -1,28 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: var(--font-karma), serif;
-  --font-sans: var(--font-league-spartan), sans-serif;
-  --font-sans: var(--font-league-spartan), sans-serif;
-  --font-heavy: var(--font-poppins), sans-serif;   /* título gigante do hero */
-
-  /* Marca */
-  --color-wine: #57050D;    /* bordô — seções escuras (mapa) */
-  --color-clay: #A1613B;    /* terracota — acento, headline, CTA */
-
-  /* Fundos claros */
-  --color-sand: #DDC0AE;    /* areia quente — fundo do hero/header */
-  --color-blush: #F2E6EC;   /* rosa claro — seção de produtos */
-  --color-mauve: #D8B9C3;   /* mauve — detalhes / placeholder */
-
-  /* Neutros e texto */
-  --color-black: #000000;
-  --color-ink: #383838;     /* texto corpo (preto suave) */
-  --color-slate: #505050;   /* texto secundário */
-  --color-mist: #D9D9D9;    /* bordas / superfícies neutras */
-  --color-white: #FFFFFF;
+  /* EcoJar · paleta IDV "Alquimia Rebelde / Visceral & Premium" */
+  --color-noir:  #0B050F;  /* fundo base */
+  --color-vinho: #57050D;  /* âncora */
+  --color-ambar: #B96E10;  /* CTA / destaque */
+  --color-rosa:  #D8B9C3;  /* apoio */
+  --color-blush: #F2E6EC;  /* texto claro / "papel" */
+  /* derivados (não estão na IDV; usados só p/ estados) */
+  --color-vinho-900: #3B0309;
+  --color-ambar-400: #D98A2B;
+  --color-noir-700:  #1A0F22;
+  /* tipografia */
+  --font-display: var(--font-gloock), Georgia, serif;        /* títulos/logo */
+  --font-body:    var(--font-acumin), "Inter", system-ui, sans-serif; /* corpo */
 }
 
-body {
-  font-family: var(--font-sans);
+:root {
+  /* TODO(fonts): Acumin Pro não existe no next/font/google. Wire a fonte real via
+     next/font/local (arquivos licenciados) ou Adobe Fonts, expondo --font-acumin.
+     Até lá, este placeholder mantém o fallback do corpo (Inter/system-ui) válido —
+     sem ele, var(--font-acumin) ficaria indefinido e invalidaria o font-family. */
+  --font-acumin: "Inter", system-ui, sans-serif;
 }
