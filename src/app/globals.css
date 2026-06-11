@@ -1,25 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  /* EcoJar · paleta IDV "Alquimia Rebelde / Visceral & Premium" */
-  --color-noir:  #0B050F;  /* fundo base */
-  --color-vinho: #57050D;  /* âncora */
-  --color-ambar: #B96E10;  /* CTA / destaque */
-  --color-rosa:  #D8B9C3;  /* apoio */
-  --color-blush: #F2E6EC;  /* texto claro / "papel" */
-  /* derivados (não estão na IDV; usados só p/ estados) */
-  --color-vinho-900: #3B0309;
-  --color-ambar-400: #D98A2B;
-  --color-noir-700:  #1A0F22;
-  /* tipografia */
-  --font-display: var(--font-gloock), Georgia, serif;        /* títulos/logo */
-  --font-body:    var(--font-acumin), "Inter", system-ui, sans-serif; /* corpo */
-}
+  /* EcoJar · paleta IDV clara — provisória, confirmar com Yasmim.
+     wine confirmado nos assets (logo/monograma = #57050D); blush reaproveitado. */
+  --color-wine:  #57050D; /* âncora — bg de seções e texto sobre claro */
+  --color-clay:  #A86A35; /* clay/mostarda — coluna "Funcionamento" */
+  --color-sand:  #E7DBC7; /* bege quente de apoio */
+  --color-blush: #F6E2EA; /* "papel" claro — bg de seções; casa com o fundo da hero-foto */
+  --color-mauve: #B98BA0; /* rosa empoeirado de apoio */
+  --color-black: #14100F; /* preto quente */
+  --color-ink:   #2A2024; /* texto principal sobre claro */
+  --color-slate: #6E6168; /* texto secundário / muted */
+  --color-mist:  #DCD7DA; /* neutro claro (placeholder do vídeo) */
+  --color-white: #FFFFFF;
 
-:root {
-  /* TODO(fonts): Acumin Pro não existe no next/font/google. Wire a fonte real via
-     next/font/local (arquivos licenciados) ou Adobe Fonts, expondo --font-acumin.
-     Até lá, este placeholder mantém o fallback do corpo (Inter/system-ui) válido —
-     sem ele, var(--font-acumin) ficaria indefinido e invalidaria o font-family. */
-  --font-acumin: "Inter", system-ui, sans-serif;
+  /* tipografia */
+  --font-display: var(--font-gloock), Georgia, serif;                         /* títulos/logo */
+  --font-sans:    var(--font-league-spartan), ui-sans-serif, system-ui, sans-serif; /* corpo */
 }

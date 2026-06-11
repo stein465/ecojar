@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Gloock } from "next/font/google";
+import { Gloock, League_Spartan } from "next/font/google";
 import "./globals.css";
 
-// Títulos / logo — display serif da IDV.
+// Títulos / logo — display serif da IDV (Gloock só tem peso 400).
 const gloock = Gloock({
   weight: "400",
   variable: "--font-gloock",
@@ -10,23 +10,16 @@ const gloock = Gloock({
   subsets: ["latin"],
 });
 
-// TODO(fonts): corpo é Acumin Pro, que NÃO existe no next/font/google.
-// Wire via next/font/local (arquivos .woff2 licenciados) ou Adobe Fonts, expondo
-// a CSS var --font-acumin. Exemplo (quando houver os arquivos):
-//
-//   import localFont from "next/font/local";
-//   const acumin = localFont({
-//     src: [{ path: "../fonts/AcuminPro-Regular.woff2", weight: "400", style: "normal" }],
-//     variable: "--font-acumin",
-//     display: "swap",
-//   });
-//
-// e adicionar `acumin.variable` ao className do <body>.
-// Por ora o fallback "Inter"/system-ui (em globals.css) segura o corpo.
+// Corpo — League Spartan (variable).
+const leagueSpartan = League_Spartan({
+  variable: "--font-league-spartan",
+  display: "swap",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Ecojar",
-  description: "Ecojar",
+  description: "Cosmética botânica de alta performance",
 };
 
 export default function RootLayout({
@@ -37,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="h-full antialiased">
       <body
-        className={`${gloock.variable} min-h-full flex flex-col bg-noir text-blush font-body`}
+        className={`${gloock.variable} ${leagueSpartan.variable} min-h-full flex flex-col bg-white text-ink font-sans`}
       >
         {children}
       </body>
