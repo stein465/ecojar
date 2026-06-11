@@ -4,17 +4,10 @@ import { products, formatPrice } from "@/data/products";
 export default function ProductsSection() {
   return (
     <section id="produtos" className="bg-wine py-16 md:py-24 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-5 md:px-8 flex flex-wrap items-end justify-between gap-4 mb-10 md:mb-14">
+      <div className="mx-auto max-w-7xl px-5 md:px-8 mb-10 md:mb-14">
         <h2 className="font-display text-white text-4xl md:text-5xl">
           Para seu <em>ritual</em>
         </h2>
-        <p
-          aria-hidden="true"
-          className="font-sans text-white/70 text-sm flex items-center gap-2"
-        >
-          Deslize para ver mais
-          <span aria-hidden="true">→</span>
-        </p>
       </div>
 
       {/* Carrossel horizontal com scroll-snap. Cards estreitos mostram vários de
