@@ -56,7 +56,10 @@
       "Bash(\"/c/Program Files/Amazon/AWSCLIV2/aws.exe\" cloudfront list-invalidations --distribution-id E172ZK6UD9WU33 --max-items 2 --query \"InvalidationList.Items[].[Id,Status,CreateTime]\" --output table)",
       "Bash(git commit *)",
       "Bash(git -C C:/workspace/ecojar status --short)",
-      "Bash(git -C C:/workspace/ecojar branch --show-current)"
+      "Bash(git -C C:/workspace/ecojar branch --show-current)",
+      "Bash(git merge *)",
+      "Bash(git stash *)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('.claude/settings.local.json','utf8'\\)\\); console.log\\('JSON válido OK'\\)\")"
     ]
   }
 }
