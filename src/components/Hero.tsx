@@ -1,43 +1,66 @@
-import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="bg-noir px-5 md:px-8 py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl flex flex-col lg:flex-row lg:items-center gap-14 lg:gap-20">
-        {/* Text column */}
+    <section className="relative overflow-hidden bg-blush px-5 md:px-8 py-16 lg:py-24">
+      {/* Decorativo — palavra vertical gigante encostada na borda direita (lg+). */}
+      {/* TODO: Yasmim confirmar grafia: "visceral" (padrão) ou "vísceral" (estilizada). */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none select-none hidden lg:block absolute -right-4 top-1/2 -translate-y-1/2 [writing-mode:vertical-rl] rotate-180 font-display text-wine/10 text-[10rem] xl:text-[13rem] leading-none"
+      >
+        visceral
+      </span>
+
+      <div className="relative mx-auto max-w-7xl flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-20">
+        {/* Coluna de texto */}
         <div className="flex flex-col gap-6 lg:w-[45%]">
-          <h1 className="font-display text-ambar text-6xl sm:text-7xl lg:text-8xl leading-none tracking-tight lowercase">
-            Alquimia botânica.
+          <Image
+            src="/brand/monograma.svg"
+            width={40}
+            height={47}
+            alt=""
+            aria-hidden="true"
+            className="h-10 w-auto"
+          />
+
+          <h1 className="font-display text-wine text-5xl sm:text-6xl lg:text-7xl leading-[1.05]">
+            A natureza em sua forma mais profunda
           </h1>
 
-          <p className="font-body text-rosa text-xs sm:text-sm tracking-[0.22em] uppercase">
-            Beleza natural, de dentro pra fora
+          <p className="font-sans text-ink text-lg sm:text-xl">
+            Cosmética botânica de alta performance
           </p>
 
-          <p className="font-body text-blush text-base sm:text-lg leading-relaxed">
-            Óleos e séruns botânicos que devolvem viço à pele madura — com
-            a força do hibisco e fórmulas refiláveis.
+          <p className="font-sans text-slate text-base leading-relaxed">
+            A mesma força que pulsa na seiva das plantas, devolvida à sua pele.
+            Estudamos os fluxos vitais da natureza e os transmutamos em cuidado
+            para a pele madura. Ativos vegetais que penetram além da superfície.
+            Beleza real que vem de dentro.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-start gap-4 pt-2">
-            <WhatsAppCTA size="lg" />
-
+          <div className="pt-2">
             <a
               href="#produtos"
-              className="inline-flex items-center font-body text-ambar text-sm font-medium py-3 hover:underline decoration-ambar underline-offset-4 rounded-sm focus-visible:outline-2 focus-visible:outline-ambar focus-visible:outline-offset-2"
+              className="inline-flex items-center justify-center rounded-full bg-wine text-white font-sans text-base min-h-12 px-8 transition-colors hover:bg-wine/90 focus-visible:outline-2 focus-visible:outline-wine focus-visible:outline-offset-2"
             >
-              Ver produtos →
+              Conheça a ECOJAR
             </a>
           </div>
         </div>
 
-        {/* Image column */}
+        {/* Coluna de imagem */}
         <div className="lg:w-[55%]">
-          {/* TODO: trocar por <Image> real (3 frascos em pedestais) */}
-          <div className="aspect-[4/3] lg:aspect-[5/4] rounded-2xl bg-rosa/10 flex items-center justify-center">
-            <span className="font-body text-rosa text-sm tracking-wide">
-              imagem do produto
-            </span>
+          {/* Sem moldura/arredondamento: o fundo da foto casa com bg-blush e funde com a home. */}
+          <div className="relative aspect-[4/3]">
+            <Image
+              src="/hero-foto.png"
+              fill
+              className="object-cover"
+              sizes="(min-width:1024px) 55vw, 100vw"
+              priority
+              alt="Vidro rosé com tag da Ecojar"
+            />
           </div>
         </div>
       </div>
