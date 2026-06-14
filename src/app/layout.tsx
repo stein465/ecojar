@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${gloock.variable} ${acumin.variable} h-full antialiased`}
+      className={`${gloock.variable} ${acumin.variable} h-full antialiased scroll-smooth motion-reduce:scroll-auto`}
     >
       <body className="min-h-full flex flex-col bg-white text-ink font-sans">
         {children}
