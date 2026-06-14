@@ -15,6 +15,6 @@
   --color-white: #FFFFFF;
 
   /* tipografia */
-  --font-display: var(--font-gloock), Georgia, serif;                         /* títulos/logo */
-  --font-sans:    var(--font-league-spartan), ui-sans-serif, system-ui, sans-serif; /* corpo */
+  --font-display: var(--font-gloock), Georgia, serif;                    /* decorativo serifado */
+  --font-sans:    var(--font-acumin), ui-sans-serif, system-ui, sans-serif; /* texto (IDV) */
 }

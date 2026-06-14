@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Gloock, League_Spartan } from "next/font/google";
+import { Gloock } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-// Títulos / logo — display serif da IDV (Gloock só tem peso 400).
+// Gloock — display serif da IDV (logo é imagem; usado no decorativo "visceral").
 const gloock = Gloock({
   weight: "400",
   variable: "--font-gloock",
@@ -10,11 +11,18 @@ const gloock = Gloock({
   subsets: ["latin"],
 });
 
-// Corpo — League Spartan (variable).
-const leagueSpartan = League_Spartan({
-  variable: "--font-league-spartan",
+// Acumin Pro — tipografia de texto da IDV, servida localmente (next/font/local).
+const acumin = localFont({
+  src: [
+    { path: "../fonts/AcuminPro-Regular.ttf", weight: "400", style: "normal" },
+    { path: "../fonts/AcuminPro-Italic.ttf", weight: "400", style: "italic" },
+    { path: "../fonts/AcuminPro-Medium.ttf", weight: "500", style: "normal" },
+    { path: "../fonts/AcuminPro-Semibold.ttf", weight: "600", style: "normal" },
+    { path: "../fonts/AcuminPro-Bold.ttf", weight: "700", style: "normal" },
+    { path: "../fonts/AcuminPro-BoldItalic.ttf", weight: "700", style: "italic" },
+  ],
+  variable: "--font-acumin",
   display: "swap",
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -28,10 +36,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="h-full antialiased">
-      <body
-        className={`${gloock.variable} ${leagueSpartan.variable} min-h-full flex flex-col bg-white text-ink font-sans`}
-      >
+    <html
+      lang="pt-BR"
+      className={`${gloock.variable} ${acumin.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col bg-white text-ink font-sans">
         {children}
       </body>
     </html>

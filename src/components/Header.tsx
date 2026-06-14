@@ -8,15 +8,16 @@ const NAV_LINKS = [
   { label: "Sobre", href: "#sobre" },
 ];
 
-// Links de conta/carrinho — visuais por enquanto.
-// TODO: ligar ao carrinho na fase e-commerce.
+// Conta/contato — "Contato" e "Carrinho" conforme Figma (143:15). Visuais por enquanto.
+// TODO: ligar o carrinho na fase e-commerce.
 const ACCOUNT_LINKS = [
-  { label: "Log In", href: "#" },
+  { label: "Contato", href: "#contato" },
   { label: "Carrinho", href: "#" },
 ];
 
+// Célula do nav desktop — altura ~98px e texto 18px conforme Figma.
 const cellBase =
-  "flex items-center justify-center px-6 py-4 font-sans text-wine text-sm transition-colors hover:text-wine/70 focus-visible:outline-2 focus-visible:outline-wine focus-visible:outline-offset-2";
+  "flex items-center justify-center px-6 min-h-[88px] lg:min-h-[98px] font-sans text-ink text-lg transition-colors hover:text-ink/60 focus-visible:outline-2 focus-visible:outline-wine focus-visible:outline-offset-2";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -54,7 +55,7 @@ export default function Header() {
         <a
           href="#"
           aria-label="Ecojar — início"
-          className="flex items-center justify-center px-6 py-3 focus-visible:outline-2 focus-visible:outline-wine focus-visible:outline-offset-2"
+          className="flex items-center justify-center px-6 min-h-[88px] lg:min-h-[98px] focus-visible:outline-2 focus-visible:outline-wine focus-visible:outline-offset-2"
         >
           <Image src="/brand/logo.svg" width={124} height={37} alt="Ecojar" priority />
         </a>
@@ -130,27 +131,25 @@ export default function Header() {
         </div>
 
         <nav className="flex flex-col gap-5" aria-label="Navegação mobile">
-          {[...NAV_LINKS, { label: "Carrinho", href: "#" }].map(
-            ({ label, href }) => (
-              <a
-                key={label}
-                href={href}
-                onClick={() => {
-                  setActive(href);
-                  setOpen(false);
-                }}
-                className={[
-                  "font-sans text-wine text-base rounded-sm hover:text-wine/70 transition-colors",
-                  "focus-visible:outline-2 focus-visible:outline-wine focus-visible:outline-offset-2",
-                  active === href
-                    ? "underline decoration-wine decoration-2 underline-offset-4"
-                    : "",
-                ].join(" ")}
-              >
-                {label}
-              </a>
-            )
-          )}
+          {[...NAV_LINKS, ...ACCOUNT_LINKS].map(({ label, href }) => (
+            <a
+              key={label}
+              href={href}
+              onClick={() => {
+                setActive(href);
+                setOpen(false);
+              }}
+              className={[
+                "font-sans text-wine text-base rounded-sm hover:text-wine/70 transition-colors",
+                "focus-visible:outline-2 focus-visible:outline-wine focus-visible:outline-offset-2",
+                active === href
+                  ? "underline decoration-wine decoration-2 underline-offset-4"
+                  : "",
+              ].join(" ")}
+            >
+              {label}
+            </a>
+          ))}
         </nav>
       </div>
     </header>
