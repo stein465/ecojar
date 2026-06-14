@@ -17,7 +17,7 @@ export default function LocationSection() {
               Endereço
             </p>
             <p className="font-sans text-lg">
-              Rua das Gaças - 0106, Avaré, São Paulo / 546544-98
+              Rua das Garças - 0106, Avaré, São Paulo 546544-98
             </p>
           </div>
 
@@ -31,13 +31,14 @@ export default function LocationSection() {
 
         {/* Coluna 2 — mapa */}
         <div className="min-h-[320px] lg:min-h-full">
+          {/* Tom rosado da IDV (Figma) aplicado via filtro CSS sobre o embed do Maps. */}
           <iframe
             src="https://www.google.com/maps?q=Avar%C3%A9,+SP&output=embed"
             title="Mapa de Avaré, São Paulo"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
-            className="h-full w-full border-0"
+            className="h-full w-full border-0 [filter:grayscale(0.4)_sepia(0.5)_hue-rotate(290deg)_saturate(1.5)_brightness(1.03)]"
           />
         </div>
       </div>

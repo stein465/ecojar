@@ -3,9 +3,12 @@ export type Product = {
   name: string;
   price: number;
   image: string;
-  description: string;
+  description?: string;
 };
 
+// Fonte da verdade: carrossel "Para seu ritual" do Figma (nó 9:435).
+// ⚠️ Descrições de Vela, Creme hidratante e Kit não constam no Figma lido —
+// mantidas as anteriores até a Yasmim confirmar. Máscara vegetal sem descrição.
 export const products: Product[] = [
   {
     id: "vela-hermetica",
@@ -22,8 +25,9 @@ export const products: Product[] = [
     description: "Camomila & melaleuca",
   },
   {
+    // id/imagem mantidos para não quebrar o asset; rótulo veio do Figma ("Kit hidratação").
     id: "kit-reparacao",
-    name: "Kit reparação",
+    name: "Kit hidratação",
     price: 210,
     image: "/produtos/produto-kit-reparacao.png",
     description: "Máscara vegetal, creme reparador e creme balsâmico",
@@ -31,9 +35,29 @@ export const products: Product[] = [
   {
     id: "creme-reparador",
     name: "Creme reparador",
-    price: 65,
+    price: 85,
     image: "/produtos/produto-creme-reparador.png",
     description: "Andiroba & cera de abelha",
+  },
+  {
+    id: "serum-facial",
+    name: "Sérum facial",
+    price: 90,
+    image: "/produtos/produto-serum-facial.png",
+    description: "Hibisco & Jatropha",
+  },
+  {
+    id: "creme-balsamico",
+    name: "Creme balsâmico",
+    price: 110,
+    image: "/produtos/produto-creme-balsamico.png",
+    description: "Aloe Vera & Copaíba",
+  },
+  {
+    id: "mascara-vegetal",
+    name: "Máscara vegetal",
+    price: 90,
+    image: "/produtos/produto-mascara-vegetal.png",
   },
 ];
 
