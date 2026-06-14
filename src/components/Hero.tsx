@@ -11,9 +11,9 @@ export default function Hero() {
       {/* TODO: Yasmim confirmar grafia: "visceral" (padrão) ou "vísceral" (estilizada). */}
       <span
         aria-hidden="true"
-        className="pointer-events-none select-none hidden lg:flex absolute inset-y-0 right-0 w-[300px] xl:w-[340px] items-center justify-center overflow-hidden"
+        className="pointer-events-none select-none hidden lg:flex absolute inset-y-0 right-0 w-[230px] xl:w-[270px] items-center justify-center overflow-hidden"
       >
-        <span className="-rotate-90 font-display text-ink/[0.08] text-[15rem] xl:text-[17rem] leading-none tracking-[-0.07em] whitespace-nowrap">
+        <span className="-rotate-90 font-display text-ink/[0.08] text-[11rem] xl:text-[12.5rem] leading-none tracking-[-0.05em] whitespace-nowrap">
           visceral
         </span>
       </span>
@@ -24,14 +24,14 @@ export default function Hero() {
           {/* Monograma à esquerda do título, alinhados no topo (conforme Figma). */}
           <div className="flex items-start gap-6 lg:gap-16">
             <Image
-              src="/brand/monograma.svg"
-              width={55}
-              height={96}
+              src="/brand/monograma-hero.svg"
+              width={58}
+              height={101}
               alt=""
               aria-hidden="true"
-              className="shrink-0 h-14 lg:h-[84px] w-auto mt-1"
+              className="hidden lg:block shrink-0 lg:h-24 w-auto"
             />
-            <h1 className="font-sans font-bold text-wine text-4xl lg:text-5xl leading-[1.1]">
+            <h1 className="font-sans font-bold text-wine text-4xl lg:text-5xl leading-none">
               A natureza em sua forma mais profunda
             </h1>
           </div>
@@ -63,15 +63,15 @@ export default function Hero() {
 
         {/* Coluna de imagem */}
         <div className="lg:w-1/2">
-          {/* Sem moldura/arredondamento: o fundo da foto casa com bg-blush e funde com a home. */}
+          {/* Foto com fundo removido (rembg) — o frasco flutua sobre o blush da seção. */}
           <div className="relative aspect-[4/3]">
             <Image
-              src="/hero-foto.png"
+              src="/hero-foto-sem-fundo.png"
               fill
-              className="object-cover"
+              className="object-contain"
               sizes="(min-width:1024px) 50vw, 100vw"
               priority
-              alt="Vidro rosé com tag da Ecojar"
+              alt="Frasco rosé com tag da Ecojar"
             />
           </div>
         </div>

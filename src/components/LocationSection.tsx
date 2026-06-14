@@ -1,6 +1,6 @@
 export default function LocationSection() {
   return (
-    <section id="endereco" className="bg-wine py-16 md:py-24 px-5 md:px-8">
+    <section id="endereco" className="hidden md:block bg-wine py-16 md:py-24 px-5 md:px-8">
       <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden">
         {/* Coluna 1 — informações */}
         <div className="bg-clay text-white p-8 md:p-12 flex flex-col gap-8">

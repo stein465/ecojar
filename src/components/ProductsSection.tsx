@@ -4,7 +4,7 @@ import { whatsappLink } from "@/data/site";
 
 export default function ProductsSection() {
   return (
-    <section id="produtos" className="bg-wine py-16 md:py-24 overflow-hidden scroll-mt-20">
+    <section id="produtos" className="bg-wine py-16 md:py-24 overflow-hidden scroll-mt-[98px]">
       <div className="mx-auto max-w-7xl px-5 md:px-8 mb-10 md:mb-14 text-center md:text-left">
         {/* Sobretítulo só no mobile, conforme Figma (160:519). */}
         <p className="md:hidden font-sans text-white/70 text-sm tracking-wide mb-2">
