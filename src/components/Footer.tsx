@@ -115,7 +115,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>55 98891-0099</li>
-              <li>Rua das Garças, 0106 Avaré, SP</li>
+              <li>
+                Rua das Garças, 0106
+                <br />
+                Avaré, SP
+              </li>
             </ul>
             <div className="mt-4 flex items-center gap-3">
               {SOCIAL.filter((s) => s.label === "Facebook" || s.label === "Instagram").map((s) => (
