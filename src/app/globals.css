@@ -4,9 +4,9 @@
   /* EcoJar · paleta IDV clara — provisória, confirmar com Yasmim.
      wine confirmado nos assets (logo/monograma = #57050D); blush reaproveitado. */
   --color-wine:  #57050D; /* âncora — bg de seções e texto sobre claro */
-  --color-clay:  #A86A35; /* clay/mostarda — coluna "Funcionamento" */
+  --color-clay:  #b96e10; /* clay/mostarda — alinhado ao Figma (Yasmim) */
   --color-sand:  #E7DBC7; /* bege quente de apoio */
-  --color-blush: #F6E2EA; /* "papel" claro — bg de seções; casa com o fundo da hero-foto */
+  --color-blush: #f7e2e9; /* "papel" claro — bg de seções; alinhado ao Figma (Yasmim) */
   --color-mauve: #B98BA0; /* rosa empoeirado de apoio */
   --color-black: #14100F; /* preto quente */
   --color-ink:   #2A2024; /* texto principal sobre claro */

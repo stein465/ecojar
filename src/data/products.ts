@@ -1,3 +1,6 @@
+import { createReader } from "@keystatic/core/reader";
+import keystaticConfig from "../../keystatic.config";
+
 export type Product = {
   id: string;
   name: string;
@@ -6,60 +9,36 @@ export type Product = {
   description?: string;
 };
 
-// Fonte da verdade: carrossel "Para seu ritual" do Figma (nó 9:435).
-// ⚠️ Descrições de Vela, Creme hidratante e Kit não constam no Figma lido —
-// mantidas as anteriores até a Yasmim confirmar. Máscara vegetal sem descrição.
-export const products: Product[] = [
-  {
-    id: "vela-hermetica",
-    name: "Vela hermética",
-    price: 55,
-    image: "/produtos/produto-vela-hermetica.png",
-    description: "Resina de madeira",
-  },
-  {
-    id: "creme-hidratante",
-    name: "Creme hidratante",
-    price: 65,
-    image: "/produtos/produto-creme-hidratante.png",
-    description: "Camomila & melaleuca",
-  },
-  {
-    // id/imagem mantidos para não quebrar o asset; rótulo veio do Figma ("Kit hidratação").
-    id: "kit-reparacao",
-    name: "Kit hidratação",
-    price: 210,
-    image: "/produtos/produto-kit-reparacao.png",
-    description: "Máscara vegetal, creme reparador e creme balsâmico",
-  },
-  {
-    id: "creme-reparador",
-    name: "Creme reparador",
-    price: 85,
-    image: "/produtos/produto-creme-reparador.png",
-    description: "Andiroba & cera de abelha",
-  },
-  {
-    id: "serum-facial",
-    name: "Sérum facial",
-    price: 90,
-    image: "/produtos/produto-serum-facial.png",
-    description: "Hibisco & Jatropha",
-  },
-  {
-    id: "creme-balsamico",
-    name: "Creme balsâmico",
-    price: 110,
-    image: "/produtos/produto-creme-balsamico.png",
-    description: "Aloe Vera & Copaíba",
-  },
-  {
-    id: "mascara-vegetal",
-    name: "Máscara vegetal",
-    price: 90,
-    image: "/produtos/produto-mascara-vegetal.png",
-  },
-];
+const reader = createReader(process.cwd(), keystaticConfig);
+
+// Normaliza o valor do campo de imagem do Keystatic para um caminho público.
+function toPublicPath(image: string | null): string {
+  if (!image) return "";
+  return image.startsWith("/") ? image : `/produtos/${image}`;
+}
+
+// Fonte da verdade dos produtos = CMS (Keystatic), lido no momento do build.
+// Ordena por `order` para preservar a sequência definida no painel.
+export async function getProducts(): Promise<Product[]> {
+  const entries = await reader.collections.produtos.all();
+
+  return entries
+    .map(({ slug, entry }) => ({
+      order: entry.order ?? 0,
+      product: {
+        id: slug,
+        name: entry.name,
+        price: entry.price ?? 0,
+        image: toPublicPath(entry.image),
+        description:
+          entry.description && entry.description.trim()
+            ? entry.description.trim()
+            : undefined,
+      } satisfies Product,
+    }))
+    .sort((a, b) => a.order - b.order)
+    .map(({ product }) => product);
+}
 
 // "R$ 55" — moeda pt-BR sem centavos.
 export function formatPrice(n: number): string {
