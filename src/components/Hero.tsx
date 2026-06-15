@@ -4,8 +4,7 @@ import { whatsappLink } from "@/data/site";
 export default function Hero() {
   return (
     <section
-      id="sobre"
-      className="relative overflow-hidden bg-blush px-5 md:px-8 py-14 lg:py-20 scroll-mt-[98px]"
+      className="relative overflow-hidden bg-blush px-5 md:px-8 py-14 lg:py-20"
     >
       {/* Decorativo — palavra vertical gigante alinhada à altura da seção (lg+). Gloock. */}
       {/* TODO: Yasmim confirmar grafia: "visceral" (padrão) ou "vísceral" (estilizada). */}

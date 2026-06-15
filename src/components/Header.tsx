@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const NAV_LINKS = [
   { label: "Produtos", href: "/#produtos" },
-  { label: "Sobre", href: "/#sobre" },
+  { label: "Sobre", href: "/sobre" },
 ];
 
 // Conta/contato — "Contato" e "Carrinho" conforme Figma (143:15). Visuais por enquanto.
@@ -38,31 +39,31 @@ export default function Header() {
         aria-label="Navegação principal"
         className="hidden md:grid grid-cols-5 divide-x divide-wine/15 border-b border-wine/15"
       >
-        <a
+        <Link
           href="/#produtos"
-          onClick={() => setActive("#produtos")}
-          className={linkClasses("#produtos")}
+          onClick={() => setActive("/#produtos")}
+          className={linkClasses("/#produtos")}
         >
           Produtos
-        </a>
-        <a
-          href="/#sobre"
-          onClick={() => setActive("#sobre")}
-          className={linkClasses("#sobre")}
+        </Link>
+        <Link
+          href="/sobre"
+          onClick={() => setActive("/sobre")}
+          className={linkClasses("/sobre")}
         >
           Sobre
-        </a>
-        <a
+        </Link>
+        <Link
           href="/"
           aria-label="Ecojar — início"
           className="flex items-center justify-center px-6 min-h-[88px] lg:min-h-[98px] focus-visible:outline-2 focus-visible:outline-wine focus-visible:outline-offset-2"
         >
           <Image src="/brand/logo.svg" width={124} height={37} alt="Ecojar" priority />
-        </a>
+        </Link>
         {ACCOUNT_LINKS.map(({ label, href }) => (
-          <a key={label} href={href} className={cellBase}>
+          <Link key={label} href={href} className={cellBase}>
             {label}
-          </a>
+          </Link>
         ))}
       </nav>
 
@@ -81,13 +82,13 @@ export default function Header() {
           <span aria-hidden="true" className="block w-5 h-0.5 bg-wine" />
         </button>
 
-        <a
+        <Link
           href="/"
           aria-label="Ecojar — início"
           className="rounded focus-visible:outline-2 focus-visible:outline-wine focus-visible:outline-offset-2"
         >
           <Image src="/brand/logo.svg" width={124} height={37} alt="Ecojar" priority />
-        </a>
+        </Link>
 
         {/* espaçador para centralizar o logo */}
         <span aria-hidden="true" className="w-10" />
@@ -132,7 +133,7 @@ export default function Header() {
 
         <nav className="flex flex-col gap-5" aria-label="Navegação mobile">
           {[...NAV_LINKS, ...ACCOUNT_LINKS].map(({ label, href }) => (
-            <a
+            <Link
               key={label}
               href={href}
               onClick={() => {
@@ -148,7 +149,7 @@ export default function Header() {
               ].join(" ")}
             >
               {label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
