@@ -4,14 +4,14 @@ import { useState } from "react";
 import Image from "next/image";
 
 const NAV_LINKS = [
-  { label: "Produtos", href: "#produtos" },
-  { label: "Sobre", href: "#sobre" },
+  { label: "Produtos", href: "/#produtos" },
+  { label: "Sobre", href: "/#sobre" },
 ];
 
 // Conta/contato — "Contato" e "Carrinho" conforme Figma (143:15). Visuais por enquanto.
 // TODO: ligar o carrinho na fase e-commerce.
 const ACCOUNT_LINKS = [
-  { label: "Contato", href: "#contato" },
+  { label: "Contato", href: "/#contato" },
   { label: "Carrinho", href: "#" },
 ];
 
@@ -39,21 +39,21 @@ export default function Header() {
         className="hidden md:grid grid-cols-5 divide-x divide-wine/15 border-b border-wine/15"
       >
         <a
-          href="#produtos"
+          href="/#produtos"
           onClick={() => setActive("#produtos")}
           className={linkClasses("#produtos")}
         >
           Produtos
         </a>
         <a
-          href="#sobre"
+          href="/#sobre"
           onClick={() => setActive("#sobre")}
           className={linkClasses("#sobre")}
         >
           Sobre
         </a>
         <a
-          href="#"
+          href="/"
           aria-label="Ecojar — início"
           className="flex items-center justify-center px-6 min-h-[88px] lg:min-h-[98px] focus-visible:outline-2 focus-visible:outline-wine focus-visible:outline-offset-2"
         >
@@ -82,7 +82,7 @@ export default function Header() {
         </button>
 
         <a
-          href="#"
+          href="/"
           aria-label="Ecojar — início"
           className="rounded focus-visible:outline-2 focus-visible:outline-wine focus-visible:outline-offset-2"
         >

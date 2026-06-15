@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 const NAV_LINKS = [
-  { label: "Início", href: "#" },
-  { label: "Produtos", href: "#produtos" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Contato", href: "#contato" },
+  { label: "Início", href: "/" },
+  { label: "Produtos", href: "/#produtos" },
+  { label: "Sobre", href: "/#sobre" },
+  { label: "Contato", href: "/#contato" },
 ];
 
 // Conteúdo do footer mobile do Figma (nó 158:148).
